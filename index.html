@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Order.uk — Restaurant food, takeaway and groceries</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--o:#f7941d;--g:#1c8a3e;--n:#0d1333;--l:#f5f5f7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Poppins,sans-serif;color:var(--n);font-size:14px;background:#fff}
+button,input,textarea{font:inherit}button{cursor:pointer;border:0}
+.w{max-width:1160px;margin:auto;padding:0 20px}
+.btn{background:var(--o);color:#fff;border-radius:30px;padding:11px 22px;font-weight:600;transition:.25s}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px #f7941d66}
+.btn.d{background:var(--n)}.btn.w0{background:#fff;color:var(--n);border:1px solid #ddd}
+.promo{background:var(--g);color:#fff;font-size:12px}.promo .w{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:8px 20px}
+.promo u{cursor:pointer}.bk{background:var(--n);color:#fff;border-radius:20px;padding:6px 14px;font-weight:600}
+header{position:sticky;top:0;background:#fff;z-index:20;box-shadow:0 2px 12px #0001}
+header .w{display:flex;align-items:center;gap:28px;height:64px}
+.logo{font-weight:700;font-size:22px;background:var(--n);color:#fff;padding:2px 10px;border-radius:6px;cursor:pointer}.logo b{color:var(--o)}
+nav{display:flex;gap:26px;flex:1}nav a{color:var(--n);font-weight:500;cursor:pointer}nav a:hover{color:var(--o)}
+#menu{display:none;background:none;font-size:24px}
+.hero{background:linear-gradient(120deg,#fff 55%,#fff3e0);padding:50px 0 60px;overflow:hidden}
+.hero .w{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center}
+h1{font-size:44px;line-height:1.15;animation:up .8s both}h1 span{color:var(--o)}
+.sub{margin:12px 0 22px;color:#555;animation:up .8s .15s both}
+.pc{display:flex;background:#fff;border-radius:40px;box-shadow:0 8px 30px #0002;padding:6px;max-width:460px;animation:up .8s .3s both}
+.pc input{flex:1;border:0;outline:0;padding:0 16px;min-width:0}
+.vis{position:relative;height:340px;background:var(--o);border-radius:40px 40px 140px 40px;display:grid;place-items:center;font-size:110px;animation:up .9s .2s both}
+.vis i{font-style:normal;position:absolute;animation:fl 4s ease-in-out infinite}
+.chip{position:absolute;background:#fff;border-radius:14px;padding:10px 14px;font-size:12px;box-shadow:0 10px 24px #0003;animation:fl 5s ease-in-out infinite}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}@keyframes fl{50%{transform:translateY(-12px)}}
+section{padding:46px 0}h2{font-size:26px;margin-bottom:20px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{padding:7px 16px;border-radius:20px;background:var(--l);cursor:pointer;font-size:13px;transition:.2s}.tab.on,.tab:hover{background:var(--n);color:#fff}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.g6{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.offer{border-radius:18px;height:150px;padding:18px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;cursor:pointer;transition:.3s}
+.offer:hover{transform:translateY(-6px)}.offer b{font-size:34px;position:absolute;top:10px;right:16px}.offer em{position:absolute;right:14px;bottom:8px;font-size:60px;font-style:normal;opacity:.9}
+.cat{background:var(--l);border-radius:16px;padding:18px 10px;text-align:center;cursor:pointer;transition:.3s}.cat:hover{background:var(--o);color:#fff;transform:translateY(-6px)}
+.cat div{font-size:40px}.cat small{display:block;opacity:.7}
+.rest{text-align:center;cursor:pointer;transition:.3s}.rest:hover{transform:scale(1.07)}.rest div{height:92px;border-radius:50%;display:grid;place-items:center;font-size:42px;margin-bottom:8px;color:#fff}
+.how{background:var(--n);color:#fff;border-radius:26px;padding:36px}.how .g3 div{background:#ffffff14;border-radius:16px;padding:20px}.how span{font-size:30px}
+.st{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center;margin-top:28px}.st b{display:block;font-size:30px;color:var(--o)}
+details{background:var(--l);border-radius:12px;padding:14px 18px;margin-bottom:10px}summary{font-weight:600;cursor:pointer}details p{margin-top:8px;color:#555}
+.pt{border-radius:20px;padding:26px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.news{background:var(--o);border-radius:22px;padding:30px;color:#fff;display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.news form{display:flex;background:#fff;border-radius:30px;padding:5px}.news input{border:0;outline:0;padding:0 14px}
+footer{background:var(--n);color:#ffffffb0;padding:36px 0;margin-top:40px;font-size:12px}footer .w{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}footer b{color:#fff;display:block;margin-bottom:8px}footer a{display:block;margin:4px 0;cursor:pointer}
+.bn{background:linear-gradient(110deg,#222,#5a3a14);color:#fff;padding:34px 0}.bn .w{display:flex;gap:30px;align-items:center;flex-wrap:wrap}.bn big{font-size:80px}
+.inf{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}.inf span{background:#ffffff22;padding:5px 12px;border-radius:16px;font-size:12px}
+.lay{display:grid;grid-template-columns:1fr 330px;gap:24px;padding-top:24px}
+.srch{width:100%;padding:12px 18px;border-radius:30px;border:1px solid #ddd;outline:0;margin-bottom:14px}
+.ct{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:12px}.ct .tab{white-space:nowrap}
+.mi{display:flex;gap:16px;border:1px solid #eee;border-radius:16px;padding:14px;margin-bottom:14px;transition:.3s;animation:up .5s both}.mi:hover{box-shadow:0 8px 24px #0001}
+.mi .im{width:96px;height:96px;flex:none;background:#fff3e0;border-radius:14px;display:grid;place-items:center;font-size:48px}
+.mi p{font-size:12px;color:#666;margin:4px 0 8px}.sz{display:flex;gap:8px;flex-wrap:wrap}
+.sz button{background:var(--l);border-radius:10px;padding:6px 10px;font-size:12px;transition:.2s}.sz button:hover{background:var(--o);color:#fff}
+.sp{display:flex;gap:12px;margin-bottom:16px}.sp div{flex:1;background:#fff3e0;border-radius:14px;padding:14px;cursor:pointer;font-weight:600;transition:.3s}.sp div:hover{transform:translateY(-4px);background:var(--o);color:#fff}
+aside{position:sticky;top:80px;align-self:start;border:1px solid #eee;border-radius:18px;padding:18px}
+.bi{display:flex;gap:8px;font-size:13px;margin:10px 0;align-items:flex-start}.bi small{display:block;color:#777}.bi b{margin-left:auto;white-space:nowrap}
+.bi button{background:var(--l);border-radius:50%;width:22px;height:22px}
+.tr{display:flex;justify-content:space-between;margin:6px 0;font-size:13px}.tr.t{font-weight:700;font-size:16px;border-top:1px dashed #ccc;padding-top:10px}
+.cp{display:flex;gap:6px;margin:10px 0}.cp input{flex:1;border:1px dashed #bbb;border-radius:10px;padding:8px;min-width:0}
+#ov{position:fixed;inset:0;background:#0009;z-index:50;display:none;place-items:center;padding:14px}#ov.on{display:grid}
+.pop{background:#fff;border-radius:22px;width:min(480px,100%);max-height:92vh;overflow:auto;padding:24px;animation:pp .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes pp{from{opacity:0;transform:scale(.9) translateY(20px)}}
+.pop h3{font-size:20px;margin-bottom:6px}.pop .x{float:right;background:var(--l);border-radius:50%;width:30px;height:30px}
+.pop input[type=text],.pop textarea{width:100%;border:1px solid #ddd;border-radius:12px;padding:12px;margin:12px 0;outline:0}
+.row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #f0f0f0}
+.row label{display:flex;gap:8px;align-items:center;cursor:pointer}.row input{accent-color:var(--o);width:17px;height:17px}
+.qty{display:flex;gap:10px;align-items:center}.qty button{width:26px;height:26px;border-radius:50%;background:var(--o);color:#fff}
+.gh{font-weight:600;margin:14px 0 2px;color:var(--o)}.ok{color:var(--g);font-weight:600}.er{color:#d33;font-weight:600}
+.ft{display:flex;gap:10px;margin-top:18px}.ft .btn{flex:1}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,80px);background:var(--n);color:#fff;padding:12px 22px;border-radius:30px;z-index:60;transition:.4s}#toast.on{transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(30px);transition:.7s}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){.hero .w,.lay,.g3{grid-template-columns:1fr}.g6{grid-template-columns:repeat(3,1fr)}h1{font-size:30px}.vis{height:240px;font-size:70px}
+nav{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 20px;gap:14px;box-shadow:0 10px 20px #0002}nav.on{display:flex}#menu{display:block;margin-left:auto}header .w{gap:10px}
+.st{grid-template-columns:1fr 1fr}footer .w{grid-template-columns:1fr 1fr}aside{position:static}}
+</style></head><body>
+<div class="promo"><div class="w"><span>🌟 Get 5% Off your first order, Promo: ORDER5</span><span>Regent Street, A4, A4201, London <u onclick="postcode()">Change Location</u></span><span class="bk" id="bar">0 Items GBP 0.00</span></div></div>
+<header><div class="w"><div class="logo" onclick="go('home')">Order<b>.uk</b></div>
+<nav id="nav"><a onclick="go('home')">Home</a><a onclick="go('rest')">Browse Menu</a><a onclick="go('home','off')">Special Offers</a><a onclick="go('home','pop')">Restaurants</a><a onclick="track()">Track Order</a></nav>
+<button class="btn d" onclick="login()">Login/Signup</button><button id="menu" onclick="nav.classList.toggle('on')">☰</button></div></header>
+
+<main id="home">
+<div class="hero"><div class="w"><div>
+<p style="color:var(--o);font-weight:600;animation:up .6s both">I'm lovin' it!</p>
+<h1>Order Restaurant food, <span>takeaway and groceries.</span></h1>
+<p class="sub">Feast Your Senses, Fast and Fresh<br><small>Enter a postcode to see what we deliver</small></p>
+<div class="pc"><input id="hp" placeholder="e.g. EC4R 3TE"><button class="btn" onclick="postcode(hp.value)">Search</button></div></div>
+<div class="vis"><i style="left:12%;top:14%">🍕</i><i style="right:12%;top:20%;animation-delay:.8s">🍔</i><i style="left:30%;bottom:10%;animation-delay:1.6s">🍟</i>
+<div class="chip" style="left:-14px;top:40px">✅ <b>We’ve Received your order!</b><br>Awaiting Restaurant acceptance</div>
+<div class="chip" style="right:-8px;bottom:34px;animation-delay:1s">🛵 <b>Order Accepted!</b><br>Your order will be delivered shortly</div></div></div></div>
+
+<section id="off"><div class="w rv"><h2>Up to -40% 🎊 Order.uk exclusive deals</h2>
+<div class="tabs" id="otabs"></div><div class="g3" id="offers"></div></div></section>
+<section><div class="w rv"><h2>Order.uk Popular Categories 🤩</h2><div class="g6" id="cats"></div></div></section>
+<section id="pop"><div class="w rv"><h2>Popular Restaurants</h2><div class="g6" id="rests"></div></div></section>
+<section><div class="w rv"><div class="g3"><div class="pt" style="background:#fff3e0"><div><h3>Signup as a business</h3><p>Partner with us<br>Earn more with lower fees</p></div><button class="btn" onclick="login()">Get Started</button></div>
+<div class="pt" style="background:#e6f4ea"><div><h3>Signup as a rider</h3><p>Ride with us<br>Avail exclusive perks</p></div><button class="btn" onclick="login()">Get Started</button></div>
+<div class="pt" style="background:var(--n);color:#fff"><div><h3>Personalised &amp; Instant</h3><p>Download the Order.uk app for faster ordering</p></div><button class="btn">📱 App</button></div></div></div></section>
+<section><div class="w rv"><div class="how"><h2>How does Order.UK work?</h2><div class="g3">
+<div><span>🛒</span><h3>Place an Order!</h3><p>Place order through our website or Mobile app</p></div><div><span>📍</span><h3>Track Progress</h3><p>Your can track your order status with delivery time</p></div><div><span>⚡</span><h3>Get your Order!</h3><p>Receive your order at a lighting fast speed!</p></div></div>
+<p style="margin-top:18px;opacity:.8">Order.UK simplifies the food ordering process. Browse through our diverse menu, select your favorite dishes, and proceed to checkout. Your delicious meal will be on its way to your doorstep in no time!</p></div>
+<div class="st"><div><b data-c="546">0</b>Registered Riders</div><div><b data-c="789900">0</b>Orders Delivered</div><div><b data-c="690">0</b>Restaurants Partnered</div><div><b data-c="17457">0</b>Food items</div></div></div></section>
+<section><div class="w rv"><h2>Know more about us!</h2>
+<details><summary>What payment methods are accepted?</summary><p>Cards, Apple Pay, Google Pay and cash on delivery at selected restaurants.</p></details>
+<details><summary>Can I track my order in real-time?</summary><p>Yes — open Track Order to see your order status and delivery time.</p></details>
+<details><summary>Are there any special discounts or promotions available?</summary><p>Use ORDER5 for 5% off your first order, plus up to -40% on exclusive deals.</p></details>
+<details><summary>Is Order.UK available in my area?</summary><p>Enter your postcode at the top of the page to check.</p></details></div></section>
+<section><div class="w rv"><h2>Customer Reviews</h2><div class="g3"><div style="background:var(--l);border-radius:16px;padding:18px"><b>St Glx South London</b><br><small>24th September, 2023</small><p style="margin-top:8px">The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly, the staff was friendly, and the food was hot and satisfying. ⭐⭐⭐⭐⭐</p></div></div></div></section>
+</main>
+
+<main id="rest" hidden>
+<div class="bn"><div class="w"><big>🍕</big><div><p style="color:var(--o)">Pizza &amp; Fast Food</p><h1 style="font-size:34px">Tandoori Pizza London</h1><p>Desi Flavours with a blend of Italian aesthetics!</p>
+<div class="inf"><span>🟢 Open until 3:00 AM</span><span>Minimum Order: 12 GBP</span><span>🛵 Delivery in 20-25 Minutes</span><span>⭐ 3.4</span></div></div></div></div>
+<div class="w lay"><div><div class="sp"><div onclick="deal()">🎁 Special Offers<br><small>Meal Deal 1</small></div><div onclick="cust()">🍕 Customise Pizza 1<br><small>Choose toppings</small></div></div>
+<input class="srch" id="ms" placeholder="Search from menu..." oninput="menu()"><div class="ct" id="ct"></div><div id="mn"></div>
+<h2 style="margin-top:30px">Delivery information</h2><p>Estimated time until delivery: 20 min<br>Monday–Sunday: 8:00 AM–3:00 AM<br>If you have allergies or other dietary restrictions, please contact the restaurant.</p>
+<p style="margin-top:10px"><b>Contact:</b> Tooley St, London Bridge, London SE1 2TF · +934443-43 · mcdonalds.uk</p></div>
+<aside><h3>My Basket</h3><div id="bi"></div><div class="cp"><input placeholder="Apply Coupon Code here" id="cc"><button class="btn" style="padding:8px 14px" onclick="toast(cc.value?'Coupon applied ✓':'Enter a code')">Apply</button></div>
+<div class="tr"><span>Sub Total:</span><span id="st">£0</span></div><div class="tr"><span>Discounts:</span><span id="di">0</span></div><div class="tr"><span>Delivery Fee:</span><span id="df">0</span></div><div class="tr t"><span>Total to pay</span><span id="tt">£0</span></div>
+<button class="btn" style="width:100%;margin-top:12px" onclick="checkout()">Checkout!</button></aside></div></main>
+
+<footer><div class="w"><div><b>Get Exclusive Deals in your Inbox</b><div class="news" style="padding:8px;background:#fff1"><form onsubmit="event.preventDefault();toast('Subscribed ✓')"><input placeholder="youremail@gmail.com" type="email" required><button class="btn">Subscribe</button></form></div>we wont spam, read our email policy</div>
+<div><b>Legal Pages</b><a>Terms and conditions</a><a>Privacy</a><a>Cookies</a><a>Modern Slavery Statement</a></div><div><b>Important Links</b><a>Get help</a><a>Add your restaurant</a><a>Sign up to deliver</a><a>Create a business account</a></div>
+<div><b>Order.uk</b>Company # 490039-445, Registered with House of companies.<br><br>Order.uk Copyright 2024, All Rights Reserved.</div></div></footer>
+<div id="ov" onclick="if(event.target==ov)closep()"></div><div id="toast"></div>
+
+<script>
+const $=id=>document.getElementById(id),f=n=>"£"+n.toFixed(2);
+const OF=[["First Order Discount","-20%","#e8590c","🍔"],["Vegan Discount","-20%","#1c8a3e","🥗"],["Free ice Cream Offer","-100%","#7048e8","🍦"]];
+const CA=[["Burgers & Fast food","🍔",21],["Salads","🥗",32],["Pasta & Casuals","🍝",4],["Pizza","🍕",32],["Breakfast","🍳",4],["Soups","🍲",32]];
+const RS=[["McDonald’s London","🍔","#da291c"],["Papa Johns","🍕","#0b6b2f"],["KFC West London","🍗","#c8102e"],["Texas Chicken","🐔","#f5a21b"],["Burger King","🍟","#0033a0"],["Shaurma 1","🌯","#e8590c"]];
+const SZ=[["Small",21.9],["Medium",25.9],["Large",27.9],["XL Large with Sauces",32.9]];
+const MENU=[{n:"Farm House Xtreme Pizza",c:"Pizzas",e:"🍕",d:"1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries, 3 cold drinks",s:SZ},
+{n:"Deluxe Pizza",c:"Pizzas",e:"🍕",d:"Loaded with peppers, onions and mozzarella",s:SZ},{n:"Margherita",c:"Pizzas",e:"🍅",d:"Classic tomato and cheese",s:SZ},
+{n:"Royal Cheese Burger with extra Fries",c:"Burgers",e:"🍔",d:"The classics for 3",s:[["Meal",12.5]]},{n:"Garlic Bread",c:"Garlic Bread",e:"🥖",d:"Fresh, hot and buttery",s:[["Regular",4.5]]},
+{n:"Caesar Salad",c:"Salads",e:"🥗",d:"Crisp lettuce, parmesan, croutons",s:[["Regular",6.9]]},{n:"Coke Coca Cola",c:"Cold drinks",e:"🥤",d:"330ml can",s:[["Can",4.9]]},{n:"Chocolate Brownie",c:"Desserts",e:"🍫",d:"Warm with ice cream",s:[["Regular",5.5]]}];
+let cart=[{n:"12” Vegitarian Pizza",o:"No Mushrooms + green peppers",p:27.9,q:1},{n:"17” Tandoori Pizza",o:"No Mushrooms + green peppers",p:17.9,q:1},{n:"Coke Coca Cola",o:"",p:4.9,q:2}],cat="All";
+function go(v,s){$("home").hidden=v!="home";$("rest").hidden=v!="rest";nav.classList.remove("on");scrollTo({top:0});if(s)setTimeout(()=>$(s).scrollIntoView({behavior:"smooth"}),50);obs()}
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");setTimeout(()=>t.classList.remove("on"),2000)}
+function rend(){$("otabs").innerHTML=["Vegan","Sushi","Pizza & Fast food","others"].map((t,i)=>`<span class="tab ${i==2?"on":""}" onclick="document.querySelectorAll('#otabs .tab').forEach(x=>x.classList.toggle('on',x==this))">${t}</span>`).join("");
+$("offers").innerHTML=OF.map(o=>`<div class="offer" style="background:${o[2]}" onclick="go('rest')"><b>${o[1]}</b><em>${o[3]}</em><small>McDonald’s East London</small><h3>${o[0]}</h3></div>`).join("");
+$("cats").innerHTML=CA.map(c=>`<div class="cat" onclick="go('rest')"><div>${c[1]}</div><b>${c[0]}</b><small>${c[2]} Restaurants</small></div>`).join("");
+$("rests").innerHTML=RS.map(r=>`<div class="rest" onclick="go('rest')"><div style="background:${r[2]}">${r[1]}</div><b>${r[0]}</b></div>`).join("")}
+function menu(){const q=$("ms").value.toLowerCase(),cs=["All",...new Set(MENU.map(m=>m.c))];
+$("ct").innerHTML=cs.map(c=>`<span class="tab ${c==cat?"on":""}" onclick="cat='${c}';menu()">${c}</span>`).join("");
+$("mn").innerHTML=MENU.map((m,i)=>[m,i]).filter(([m])=>(cat=="All"||m.c==cat)&&m.n.toLowerCase().includes(q)).map(([m,i])=>`<div class="mi"><div class="im">${m.e}</div><div><b>${m.n}</b><p>${m.d}</p><div class="sz">${m.s.map((s,j)=>`<button onclick="add(${i},${j})">${s[0]} ${f(s[1])} +</button>`).join("")}</div></div></div>`).join("")||"<p>No items found.</p>"}
+function add(i,j){const m=MENU[i],s=m.s[j],n=m.n+(m.s.length>1?" · "+s[0]:""),x=cart.find(c=>c.n==n&&!c.o);x?x.q++:cart.push({n,o:"",p:s[1],q:1});draw();toast("Added to basket ✓")}
+function ch(i,d){cart[i].q+=d;if(cart[i].q<1)cart.splice(i,1);draw()}
+function draw(){const sub=cart.reduce((a,c)=>a+c.p*c.q,0),dis=cart.length?3:0,del=cart.length?2.5:0,n=cart.reduce((a,c)=>a+c.q,0);
+$("bi").innerHTML=cart.map((c,i)=>`<div class="bi"><button onclick="ch(${i},-1)">−</button><span>${c.q}x</span><div>${c.n}<small>${c.o}</small></div><b>${f(c.p*c.q)}</b><button onclick="ch(${i},1)">+</button></div>`).join("")||"<p style='color:#888;margin:10px 0'>Your basket is empty</p>";
+$("st").textContent=f(sub);$("di").textContent="-"+dis.toFixed(2);$("df").textContent=del.toFixed(2);$("tt").textContent=f(sub-dis+del);$("bar").textContent=`${n} Items GBP ${(sub-dis+del).toFixed(2)}`}
+function pop(h){$("ov").innerHTML=`<div class="pop">${h}</div>`;$("ov").classList.add("on")}
+function closep(){$("ov").classList.remove("on")}
+const X=`<button class="x" onclick="closep()">✕</button>`;
+function postcode(v){pop(`${X}<h3>Please Enter Your Post Code</h3><p style="color:#666">To start placing delivery order, please enter your full postcode here</p><input type="text" id="pcv" placeholder="eg. AA1 1BB" value="${v||""}"><button class="btn" style="width:100%" onclick="chk()">Find</button><p style="text-align:center;margin:10px">or</p><button class="btn w0" style="width:100%" onclick="closep();go('rest');toast('Collection selected ✓')">I want to come and collect</button>`)}
+function chk(){const v=$("pcv").value.trim().toUpperCase();
+if(!/^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/.test(v)){pop(`${X}<h3 class="er">Sorry, we don’t do delivery to your area.</h3><p style="margin:10px 0">Please check your postcode, or choose collection.</p><div class="ft"><button class="btn w0" onclick="postcode('${v}')">Change</button><button class="btn" onclick="closep();go('rest')">I will come &amp; Collect</button></div>`);return}
+pop(`${X}<h3>You’re All Set! Post Code Submitted</h3><p style="margin:10px 0"><b>${v}</b> <u style="cursor:pointer;color:var(--o)" onclick="postcode('${v}')">Change</u></p><p class="ok">We deliver to your area.</p><p style="color:#777;margin:6px 0 14px">Minimum Delivery is £10</p><div class="ft"><button class="btn" onclick="closep();go('rest')">Deliver my order</button><button class="btn w0" onclick="closep();go('rest')">I will come &amp; Collect</button></div><p style="text-align:center;margin-top:12px"><u style="cursor:pointer" onclick="closep()">Cancel &amp; Go back</u></p>`)}
+const PZ=["Margherita","Polo","Meat Fiest","Hawaiian","Toscana"];let dq={};
+function deal(){dq={};dr()}
+function dr(){const n=Object.values(dq).reduce((a,b)=>a+b,0);pop(`${X}<h3>Meal Deal 1</h3><p style="color:#666">Please select your first Pizza</p>${PZ.map(p=>`<div class="row"><span>${p}</span><div class="qty"><button onclick="dq['${p}']=Math.max(0,(dq['${p}']||0)-1);dr()">−</button>${dq[p]||0}<button onclick="dq['${p}']=(dq['${p}']||0)+1;dr()">+</button></div></div>`).join("")}<div class="tr t" style="margin-top:14px"><span>Total to pay</span><span>${f(n*27.9)}</span></div><small style="color:#777">Delivery &amp; Tax will be calculated in the next step</small><div class="ft"><button class="btn w0" onclick="closep()">Take me back</button><button class="btn" onclick="if(!${n})return toast('Select a pizza');cart.push({n:'Meal Deal 1',o:'${PZ.filter(p=>dq[p]).map(p=>dq[p]+'x '+p).join(', ')}',p:27.9,q:${n}});draw();closep();toast('Meal Deal added ✓')">Next Step</button></div>`)}
+const TP={"Vegitable Toppings":["Cheese","Green peppers","Tomato","Mushrooms","Sweetcors","Jalapeneos","Olives","Pineapples","Onions"],"Meat Toppings":["Chicken","Beef","Salami","Pepperoni","Chicken Tikka","Fish"],"Seafood Toppings":["Tuna","Anchovies","Prawns"]};let sel=new Set(),note="";
+function cust(){sel=new Set();cr()}
+function cr(){const full=sel.size>=4;pop(`${X}<h3>Customise your chicken Pizza</h3><p style="color:#666">Please select up to 4 options free!</p><p class="ok">${sel.size}/4 Selected${sel.size&&!full?` · you can still select ${4-sel.size} more item free`:""}</p>${Object.entries(TP).map(([g,a])=>`<div class="gh">${g}</div>${a.map(t=>`<div class="row"><label><input type="checkbox" ${sel.has(t)?"checked":""} ${full&&!sel.has(t)?"disabled":""} onchange="this.checked?sel.add('${t}'):sel.delete('${t}');cr()">${t}</label></div>`).join("")}`).join("")}<div class="gh">Instructions</div><textarea id="nt" rows="2" placeholder="Write your special instructions here..." style="width:100%;border:1px solid #ddd;border-radius:12px;padding:10px">${note}</textarea><div class="tr t"><span>Total to pay</span><span>${f(27.9)}</span></div><small style="color:#777">Delivery &amp; Tax will be calculated in the next step</small><div class="ft"><button class="btn w0" onclick="closep()">Take me back</button><button class="btn" onclick="note=nt.value;cart.push({n:'Customise Pizza 1',o:[...sel].join(', ')+(note?' · '+note:''),p:27.9,q:1});draw();closep();toast('Pizza added ✓')">Next Step</button></div>`)}
+function checkout(){if(!cart.length)return toast("Basket is empty");const s=cart.reduce((a,c)=>a+c.p*c.q,0);if(s<12)return toast("Minimum order is 12 GBP");postcode()}
+function track(){pop(`${X}<h3>Track Order</h3><p style="margin:10px 0">🟢 We’ve Received your order!<br>🟡 Awaiting Restaurant acceptance<br>⚪ Order Accepted!<br>⚪ Out for delivery</p><button class="btn" style="width:100%" onclick="closep()">Take me back</button>`)}
+function login(){pop(`${X}<h3>Login / Signup</h3><input type="text" placeholder="youremail@gmail.com"><button class="btn" style="width:100%" onclick="closep();toast('Welcome to Order.uk 👋')">Continue</button>`)}
+let io;function obs(){io=io||new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");e.target.querySelectorAll("[data-c]").forEach(c=>{if(c.dataset.d)return;c.dataset.d=1;const T=+c.dataset.c,t0=performance.now();(function s(t){const p=Math.min(1,(t-t0)/1400);c.textContent=Math.round(T*p).toLocaleString()+"+";p<1&&requestAnimationFrame(s)})(t0)})}}),{threshold:.15});document.querySelectorAll(".rv").forEach(e=>io.observe(e))}
+addEventListener("keydown",e=>e.key=="Escape"&&closep());
+rend();menu();draw();obs();
+</script></body></html>
